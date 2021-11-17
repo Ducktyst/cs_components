@@ -1,0 +1,10 @@
+C:\Users\kadzo\source\repos\VisualComponents1\VisualComponents1\bin\Debug\VisualComponents1.dll
+C:\Users\kadzo\source\repos\VisualComponents1\VisualComponents1\bin\Debug\VisualComponents1.pdb
+C:\Users\kadzo\source\repos\VisualComponents1\VisualComponents1\obj\Debug\VisualComponents1.ChoiceVisualComponent.resources
+C:\Users\kadzo\source\repos\VisualComponents1\VisualComponents1\obj\Debug\VisualComponents1.InputVisualComponent.resources
+C:\Users\kadzo\source\repos\VisualComponents1\VisualComponents1\obj\Debug\VisualComponents1.csproj.GenerateResource.cache
+C:\Users\kadzo\source\repos\VisualComponents1\VisualComponents1\obj\Debug\VisualComponents1.csproj.CoreCompileInputs.cache
+C:\Users\kadzo\source\repos\VisualComponents1\VisualComponents1\obj\Debug\VisualComponents1.dll
+C:\Users\kadzo\source\repos\VisualComponents1\VisualComponents1\obj\Debug\VisualComponents1.pdb
+C:\Users\kadzo\source\repos\VisualComponents1\VisualComponents1\obj\Debug\VisualComponents1.csproj.AssemblyReference.cache
+C:\Users\kadzo\source\repos\VisualComponents1\VisualComponents1\obj\Debug\VisualComponents1.UserControl2.resources
