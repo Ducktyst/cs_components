@@ -1,0 +1,12 @@
+C:\Users\kadzo\source\repos\UsingComponents\ExcelTool\obj\Debug\ExcelTool.csproj.AssemblyReference.cache
+C:\Users\kadzo\source\repos\UsingComponents\ExcelTool\obj\Debug\ExcelTool.csproj.CoreCompileInputs.cache
+C:\Users\kadzo\source\repos\UsingComponents\ExcelTool\bin\Debug\ExcelTool.dll
+C:\Users\kadzo\source\repos\UsingComponents\ExcelTool\bin\Debug\ExcelTool.pdb
+C:\Users\kadzo\source\repos\UsingComponents\ExcelTool\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\kadzo\source\repos\UsingComponents\ExcelTool\bin\Debug\OfficeOpenXml.Core.ExcelPackage.dll
+C:\Users\kadzo\source\repos\UsingComponents\ExcelTool\bin\Debug\System.IO.Packaging.dll
+C:\Users\kadzo\source\repos\UsingComponents\ExcelTool\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\kadzo\source\repos\UsingComponents\ExcelTool\bin\Debug\OfficeOpenXml.Core.ExcelPackage.pdb
+C:\Users\kadzo\source\repos\UsingComponents\ExcelTool\obj\Debug\ExcelTool.csproj.CopyComplete
+C:\Users\kadzo\source\repos\UsingComponents\ExcelTool\obj\Debug\ExcelTool.dll
+C:\Users\kadzo\source\repos\UsingComponents\ExcelTool\obj\Debug\ExcelTool.pdb

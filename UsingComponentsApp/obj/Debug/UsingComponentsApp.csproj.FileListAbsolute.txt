@@ -1,0 +1,17 @@
+C:\Users\kadzo\source\repos\UsingComponents\UsingComponentsApp\obj\Debug\UsingComponentsApp.csproj.AssemblyReference.cache
+C:\Users\kadzo\source\repos\UsingComponents\UsingComponentsApp\obj\Debug\UsingComponentsApp.Properties.Resources.resources
+C:\Users\kadzo\source\repos\UsingComponents\UsingComponentsApp\obj\Debug\UsingComponentsApp.csproj.GenerateResource.cache
+C:\Users\kadzo\source\repos\UsingComponents\UsingComponentsApp\obj\Debug\UsingComponentsApp.csproj.CoreCompileInputs.cache
+C:\Users\kadzo\source\repos\UsingComponents\UsingComponentsApp\bin\Debug\UsingComponentsApp.exe.config
+C:\Users\kadzo\source\repos\UsingComponents\UsingComponentsApp\bin\Debug\UsingComponentsApp.exe
+C:\Users\kadzo\source\repos\UsingComponents\UsingComponentsApp\bin\Debug\UsingComponentsApp.pdb
+C:\Users\kadzo\source\repos\UsingComponents\UsingComponentsApp\bin\Debug\ExcelTool.dll
+C:\Users\kadzo\source\repos\UsingComponents\UsingComponentsApp\bin\Debug\VisualComponents1.dll
+C:\Users\kadzo\source\repos\UsingComponents\UsingComponentsApp\bin\Debug\DocumentFormat.OpenXml.dll
+C:\Users\kadzo\source\repos\UsingComponents\UsingComponentsApp\bin\Debug\VisualComponents1.pdb
+C:\Users\kadzo\source\repos\UsingComponents\UsingComponentsApp\bin\Debug\ExcelTool.pdb
+C:\Users\kadzo\source\repos\UsingComponents\UsingComponentsApp\bin\Debug\DocumentFormat.OpenXml.xml
+C:\Users\kadzo\source\repos\UsingComponents\UsingComponentsApp\obj\Debug\UsingComponentsApp.csproj.CopyComplete
+C:\Users\kadzo\source\repos\UsingComponents\UsingComponentsApp\obj\Debug\UsingComponentsApp.exe
+C:\Users\kadzo\source\repos\UsingComponents\UsingComponentsApp\obj\Debug\UsingComponentsApp.pdb
+C:\Users\kadzo\source\repos\UsingComponents\UsingComponentsApp\obj\Debug\UsingComponentsApp.Form1.resources
