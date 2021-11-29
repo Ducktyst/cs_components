@@ -73,6 +73,12 @@
     <Compile Include="TemplateInput.Designer.cs">
       <DependentUpon>TemplateInput.cs</DependentUpon>
     </Compile>
+    <Compile Include="ValuesList.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ValuesList.Designer.cs">
+      <DependentUpon>ValuesList.cs</DependentUpon>
+    </Compile>
     <Service Include="{94E38DFF-614B-4cbd-B67C-F211BB35CE8B}" />
   </ItemGroup>
   <ItemGroup>
@@ -90,6 +96,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="TemplateInput.resx">
       <DependentUpon>TemplateInput.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ValuesList.resx">
+      <DependentUpon>ValuesList.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

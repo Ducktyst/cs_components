@@ -32,6 +32,8 @@ namespace VisualComponents1
     {
         public int MinLength { get; set; } = 0;
         public int MaxLength { get; set; } = 100;
+
+        public int Value { get; set; }
         
         public event EventHandler ContentChanged;
         public RangeInput()
@@ -61,6 +63,16 @@ namespace VisualComponents1
         private void btnAdd_Click(object sender, EventArgs e)
         {
 
+        }
+
+        public void SetMaxValue(int value) 
+        {
+            MaxLength = value;
+        }
+
+        public int GetMaxValue()
+        {
+            return Int32.Parse(tbInput.Text); 
         }
     }
 }

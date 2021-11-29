@@ -33,7 +33,18 @@ namespace VisualComponents1
 {
     public partial class TemplateInput : UserControl
     {
-        private DateTime currentDate { get; set; }
+        private DateTime currentDate;
+        public DateTime CurrentDate 
+        {
+            get { return currentDate; } 
+            set { currentDate = value; }
+        }
+
+        public string Value 
+        { 
+            get { return tbDate.Text; } 
+            set { tbDate.Text = value; } 
+        }
 
         public string DateExample = "31.12.2021";
 
@@ -54,32 +65,18 @@ namespace VisualComponents1
 
         private void tbDate_TextChanged(object sender, EventArgs e)
         {
-            /*if (tbDate.Text.Length < 3)
-            {
-                return;
-            }*/
-
             string dateStr = tbDate.Text.ToLower();
             if ((dateStr.Length != DateTemplate.Length) || (!DateTemplate.Contains("dd") || !DateTemplate.Contains("mm") || !DateTemplate.Contains("yyyy")))
             {
-                //MessageBox.Show($"invalid input {} {} {}");
-                return;
+                 return;
             }
-
-            /*string[] dateValues = tbDate.Text.ToLower().Split('.');
-            if (dateValues.Length != 3)
-            {
-                return;
-            }*/
-
+ 
             int first = DateTemplate.IndexOf("dd");
             int day = int.Parse(dateStr.Substring(first, 2));
 
             first = DateTemplate.IndexOf("mm") ;
             int month = int.Parse(dateStr.Substring(first, 2));
             int year = int.Parse(dateStr.Substring(DateTemplate.IndexOf("yyyy"), 4));
-
-            MessageBox.Show($" год {year} месяц {month} день {day}");
 
             currentDate = new DateTime(year, month, day);
 
@@ -91,8 +88,7 @@ namespace VisualComponents1
             int minTemplateLength = 8; int maxTemplateLength = 10;
             if ((DateTemplate.Length < minTemplateLength || DateTemplate.Length > maxTemplateLength) || (!DateTemplate.Contains("dd") || !DateTemplate.Contains("mm") || !DateTemplate.Contains("yyyy")))
             {
-                MessageBox.Show("Формат даты должен состоять из dd, mm, yyyy и разделителя");
-                return;
+                throw new ArgumentException("Формат даты должен состоять из dd, mm, yyyy и разделителя");
             }
             ttExample.SetToolTip(tbDate, template);
             DateTemplate = template;

@@ -9,6 +9,28 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+/*
+ Учет книг в библиотеке. 
+По книге хранить следующую информацию:
+название, описание, жанр (выпадающий список), стоимость (может
+быть бесплатной). 
+
+Выводить в виде дерева (жанр - стоимость - идентификатор - название).
+
+Формировать документ в Excel по
+бесплатным книгам (в каждой строке текст с информацией: название
+книги и ее описание). 
+
+Формировать отчет в Word с информацией по
+всем книгам (шапка: первые столбец и строка).
+По столбцу идет заполнение значениями идентификаторов книг. 
+В первой строке остальные заголовки: название, жанр, стоимость (если пусто, то
+строчкой писать «бесплатная»). 
+
+Круговая диаграмма в Pdf, сколько
+бесплатных книг какого жанра.
+
+*/
 namespace UsingComponentsApp
 {
     public partial class Form1 : Form
@@ -37,6 +59,13 @@ namespace UsingComponentsApp
         private void lblHeader_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnOpenLibrary_Click(object sender, EventArgs e)
+        {
+            LibraryForm libForm = new LibraryForm();
+            libForm.Activate();
+            libForm.Show();
         }
     }
 }

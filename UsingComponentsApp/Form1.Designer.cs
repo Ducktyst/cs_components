@@ -37,6 +37,7 @@ namespace UsingComponentsApp
             this.rangeInput1 = new VisualComponents1.RangeInput();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.btnOpenLibrary = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // fillParagraphsExcel
@@ -78,10 +79,12 @@ namespace UsingComponentsApp
             // 
             // templateInput
             // 
+            this.templateInput.CurrentDate = new System.DateTime(((long)(0)));
             this.templateInput.Location = new System.Drawing.Point(12, 116);
             this.templateInput.Name = "templateInput";
             this.templateInput.Size = new System.Drawing.Size(159, 73);
             this.templateInput.TabIndex = 4;
+            this.templateInput.Value = "";
             // 
             // rangeInput1
             // 
@@ -91,6 +94,7 @@ namespace UsingComponentsApp
             this.rangeInput1.Name = "rangeInput1";
             this.rangeInput1.Size = new System.Drawing.Size(172, 201);
             this.rangeInput1.TabIndex = 5;
+            this.rangeInput1.Value = 0;
             // 
             // label1
             // 
@@ -110,11 +114,22 @@ namespace UsingComponentsApp
             this.label2.TabIndex = 7;
             this.label2.Text = "Ввод по диапазону";
             // 
+            // btnOpenLibrary
+            // 
+            this.btnOpenLibrary.Location = new System.Drawing.Point(472, 354);
+            this.btnOpenLibrary.Name = "btnOpenLibrary";
+            this.btnOpenLibrary.Size = new System.Drawing.Size(202, 65);
+            this.btnOpenLibrary.TabIndex = 8;
+            this.btnOpenLibrary.Text = "Открыть библиотеку";
+            this.btnOpenLibrary.UseVisualStyleBackColor = true;
+            this.btnOpenLibrary.Click += new System.EventHandler(this.btnOpenLibrary_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(686, 431);
+            this.Controls.Add(this.btnOpenLibrary);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.rangeInput1);
@@ -140,6 +155,7 @@ namespace UsingComponentsApp
         private VisualComponents1.RangeInput rangeInput1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button btnOpenLibrary;
     }
 }
 

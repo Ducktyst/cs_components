@@ -7,7 +7,26 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+/*
+ Текстовый визуальный компонент для ввода значения
+определенного типа (TextBox), предусматривающий
+возможность пустого (не заполненного значения). В контроле
+должен быть CheckBox, который при проставленной галочке
+будет обозначать признак незаполненного значения (null) и
+неактивным элементом ввода значения (TextBox). При не
+проставленной галочке элемент ввода значения должен быть
+активным для заполнения.
+Также требуется свойство для установки и получения введенного
+значения (set, get) (предусмотреть возможность возврата
+значения null). Если у CheckBox не проставлена галочка, а в
+элементе не введено значение, выдавать ошибку. Если введенное
+значение не соответствует требуемому типу, выдавать ошибку.
+Создать также событие, вызываемое при смене значения (либо
+при смене CheckBox).
 
+Выпадающий список. Список заполняется через 
+метод, передающий строку
+*/
 namespace VisualComponents1
 {
     public partial class InputLock : UserControl
@@ -17,32 +36,29 @@ namespace VisualComponents1
         {
             get {
                 if (checkBoxLock.Checked) {
-                    savedValue = SavedValue;
-                    return SavedValue;
+                    return savedValue;
                  }
 
-                if (!checkBoxLock.Checked && (textBox.Text == "" || textBox.Text == null))
+                if (!checkBoxLock.Checked || (textBox.Text == "" || textBox.Text == null))
                 {
-                    //MessageBox.Show("textBox is locked and have not value");
                     return null;
                     throw new WarningException("textBox is locked and have no value");
                 }
 
-                savedValue = SavedValue;
-                return SavedValue;
+                return savedValue;
             }
             set {
-                /*if (!checkBoxLock.Checked)
+                if (!checkBoxLock.Checked)
                 {
                     return;
-                }*/
-         /*       if (!(value is string))
+                }
+                if (!(value is string))
                 {
-                    //MessageBox.Show("attempt to set not string value");
+                    MessageBox.Show("attempt to set not string value");
                     return;
                     throw new WarningException("attempt to set not string value");
                 }
-*/
+
                // SavedValue = value;
                 savedValue = value;
             }

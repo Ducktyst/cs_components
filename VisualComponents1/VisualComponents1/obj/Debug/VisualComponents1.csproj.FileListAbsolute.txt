@@ -21,3 +21,4 @@ C:\Users\kadzo\source\repos\UsingComponents\VisualComponents1\VisualComponents1\
 C:\Users\kadzo\source\repos\UsingComponents\VisualComponents1\VisualComponents1\obj\Debug\VisualComponents1.pdb
 C:\Users\kadzo\source\repos\UsingComponents\VisualComponents1\VisualComponents1\bin\Debug\VisualComponents1.dll
 C:\Users\kadzo\source\repos\UsingComponents\VisualComponents1\VisualComponents1\bin\Debug\VisualComponents1.pdb
+C:\Users\kadzo\source\repos\UsingComponents\VisualComponents1\VisualComponents1\obj\Debug\VisualComponents1.ValuesList.resources
