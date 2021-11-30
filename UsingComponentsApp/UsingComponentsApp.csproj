@@ -73,6 +73,12 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AddBookForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="AddBookForm.Designer.cs">
+      <DependentUpon>AddBookForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Book.cs" />
     <Compile Include="DataHelper.cs" />
     <Compile Include="Form1.cs">
@@ -81,6 +87,7 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="Genres.cs" />
     <Compile Include="Library.cs" />
     <Compile Include="LibraryForm.cs">
       <SubType>Form</SubType>
@@ -88,13 +95,25 @@
     <Compile Include="LibraryForm.Designer.cs">
       <DependentUpon>LibraryForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="LibraryGridForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LibraryGridForm.Designer.cs">
+      <DependentUpon>LibraryGridForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AddBookForm.resx">
+      <DependentUpon>AddBookForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LibraryForm.resx">
       <DependentUpon>LibraryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LibraryGridForm.resx">
+      <DependentUpon>LibraryGridForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

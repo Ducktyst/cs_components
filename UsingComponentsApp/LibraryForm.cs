@@ -13,12 +13,13 @@ namespace UsingComponentsApp
     public partial class LibraryForm : Form
     {
         Library library;
+        LibraryGridForm libGridForm;
         public LibraryForm()
         {
             InitializeComponent();
             Book[] books = new Book[] 
             { 
-                new Book(1, "Гарри Поттер и философский камень", "Описание", "Жанр", 700),
+                new Book(1, "Гарри Поттер и философский камень", "Описание", "Фентези", 700),
                 new Book(2, "Возвращение короля", "Джон Рональд Руэл Толкин", "Фентези", 500),
                 new Book(3, "Слепень (повести) - Иван Любенко", "…Зимой 1909 года Ставрополю был объявлен ультиматум.", "Детективы", 0),
                 new Book(4, "Государь (сборник) - Никколо Макиавелли", "«Цель оправдывает средства» – таков, по Макиавелли, девиз всякой сильной власти.", "История", 600),
@@ -76,6 +77,75 @@ namespace UsingComponentsApp
         }
 
         private void saveFileDialog1_FileOk(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void LibraryForm_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.Control == true && e.KeyCode == Keys.A)
+            {
+                добавитьToolStripMenuItem.PerformClick();
+            }
+            else if (e.Control == true && e.KeyCode == Keys.U)
+            {
+                изменитьToolStripMenuItem.PerformClick();
+            }
+            else if (e.Control == true && e.KeyCode == Keys.D)
+            {
+                удалитьToolStripMenuItem.PerformClick();
+            }
+            else if (e.Control == true && e.KeyCode == Keys.S)
+            {
+                wordToolStripMenuItem.PerformClick();
+            }
+            else if (e.Control == true && e.KeyCode == Keys.T)
+            {
+                excelToolStripMenuItem.PerformClick();
+            }
+            else if (e.Control == true && e.KeyCode == Keys.C)
+            {
+                бесплатныеКнигиПоЖанрамВPDFToolStripMenuItem.PerformClick();
+            }
+        }
+
+        private void openGrid_Click(object sender, EventArgs e)
+        {
+            if (libGridForm == null)
+            {
+                libGridForm = new LibraryGridForm();
+            }
+            if (libGridForm.Visible)
+            {
+                return;
+            }
+            libGridForm.Show();
+            libGridForm.Activate();
+        }
+
+        private void добавитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AddBookForm form = new AddBookForm();
+            form.Show();
+            form.Activate();
+        }
+
+        private void изменитьToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            int idx = valuesList.GetSelectedElementIndex();
+            if (idx != -1 )
+            {
+                AddBookForm form = new AddBookForm();
+
+                Book book = library.Books[idx];
+
+                form.FillFields(book);
+                form.Show();
+                form.Activate();
+            }
+        }
+
+        private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
         }
