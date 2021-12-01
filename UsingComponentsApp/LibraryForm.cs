@@ -31,16 +31,17 @@ namespace UsingComponentsApp
 
             library = new Library(books);
 
-            library.CreatePdfFreeBookByGenreDiagram();
-            library.CreateExcelFreeBookReport();
-
-            valuesList.SetTemplate("Книга: {Name}. Жанр: {Genre}. Цена: {Price}" ,  '{', '}');
-            valuesList.FillList(books);
-
             valuesList.ContextMenuStrip = contextMenuStrip1;
+
+            Redraw();
+
             //controlDataTableTable1.AddTable(library.BooksList());
         }
-
+        public void Redraw()
+        {
+            valuesList.SetTemplate("Книга: {Name}. Жанр: {Genre}. Цена: {Price}", '{', '}');
+            valuesList.FillList(library.Books);
+        }
         private void createWordReport_Click(object sender, EventArgs e)
         {
             if (library == null)
@@ -49,6 +50,26 @@ namespace UsingComponentsApp
             }
 
             library.CreateWordDetailInfoDocument("library_books.docx");
+        }
+
+        private void createExcelReport_Click(object sender, EventArgs e)
+        {
+            if (library == null)
+            {
+                return;
+            }
+
+            library.CreateExcelFreeBookReport("library_books.xlsx");
+        }
+
+        private void createPdfReport_Click(object sender, EventArgs e)
+        {
+            if (library == null)
+            {
+                return;
+            }
+
+            library.CreatePdfFreeBookByGenreDiagram("library_books_diagram.pdf");
         }
 
         private void valuesList_MouseClick(object sender, MouseEventArgs e)
@@ -119,29 +140,28 @@ namespace UsingComponentsApp
             {
                 return;
             }
-            libGridForm.Show();
+            libGridForm.Show(this);
             libGridForm.Activate();
         }
 
         private void добавитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            AddBookForm form = new AddBookForm();
-            form.Show();
+            BookForm form = new BookForm();
+            form.Show(this);
             form.Activate();
         }
 
         private void изменитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            int idx = valuesList.GetSelectedElementIndex();
-            if (idx != -1 )
+            int idxList = valuesList.GetSelectedElementIndex();
+            if (idxList != -1 )
             {
-                AddBookForm form = new AddBookForm();
+                BookForm bookForm = new BookForm();
 
-                Book book = library.Books[idx];
+                bookForm.FillFields(library.Books[idxList]);
+                bookForm.Activate();
 
-                form.FillFields(book);
-                form.Show();
-                form.Activate();
+                bookForm.Show(this);
             }
         }
 

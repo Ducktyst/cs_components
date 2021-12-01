@@ -1,10 +1,15 @@
-﻿using System;
+﻿using AnyDiff;
+using AnyDiff.Extensions;
+using System;
+using System.Collections.Generic;
 using System.Windows.Forms;
 
 namespace UsingComponentsApp
 {
-    public partial class AddBookForm : Form
+    public partial class BookForm : Form
     {
+
+        private Book _initBook;
         private Book _book;
         public Book Book
         {
@@ -19,7 +24,7 @@ namespace UsingComponentsApp
                 "История",
                 "Компьютерная литература",
         };
-        public AddBookForm()
+        public BookForm()
         {
             InitializeComponent();
             cbGenre.Items.AddRange(genres);
@@ -27,6 +32,7 @@ namespace UsingComponentsApp
 
         public void FillFields(Book book)
         {
+            _initBook = new Book(book);
             _book = book;
 
             tbBookID.Text = _book.Id.ToString(); // _book.Id - 1 ???
@@ -40,7 +46,7 @@ namespace UsingComponentsApp
 
         private void textBox1_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -99,6 +105,46 @@ namespace UsingComponentsApp
                 parentForm.Redraw();
             }
             Close();
+        }
+
+        private ICollection<Difference> findChanges()
+        {
+            return _initBook.Diff(_book, ComparisonOptions.All | ComparisonOptions.IncludeList, x => x.Name, x => x.Description, x => x.Genre, x => x.Price);
+        }
+
+        private void BookForm_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if (MessageBox.Show("Вы собираетесь закрыть форму редактирования книги. Подтвердить?", "Прекратить редактирование", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                RevertChanges();
+            }
+            else
+            {
+                e.Cancel = true;
+                this.Activate();
+            }
+        }
+
+        private void btnCancel_Click(object sender, EventArgs e)
+        {
+            ICollection<Difference> diff = findChanges();
+
+            string result = "";
+            foreach (var difference in diff)
+            {
+                result += $"Было: `{difference.LeftValue}`. Стало: `{difference.RightValue}`\n";
+            }
+                
+            MessageBox.Show($"diffs: \n {result}");
+            this.Close();
+        }
+
+        private void RevertChanges()
+        {
+            _book.Name = _initBook.Name;
+            _book.Description= _initBook.Description;
+            _book.Genre = _initBook.Genre;
+            _book.Price = _initBook.Price;
         }
     }
 }

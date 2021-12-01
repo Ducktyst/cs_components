@@ -49,6 +49,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AnyDiff, Version=1.0.88.0, Culture=neutral, PublicKeyToken=f785a5befb7778dc, processorArchitecture=MSIL">
+      <HintPath>..\packages\AnyDiff.1.0.88\lib\net48\AnyDiff.dll</HintPath>
+    </Reference>
     <Reference Include="DocumentFormat.OpenXml, Version=2.14.0.0, Culture=neutral, PublicKeyToken=8fb06cb64d019a17, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\ConrtrolsLibraryDlls\WindowsFormsComponentLibraryFramework\DocumentFormat.OpenXml.dll</HintPath>
@@ -73,11 +76,11 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AddBookForm.cs">
+    <Compile Include="BookForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="AddBookForm.Designer.cs">
-      <DependentUpon>AddBookForm.cs</DependentUpon>
+    <Compile Include="BookForm.Designer.cs">
+      <DependentUpon>BookForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Book.cs" />
     <Compile Include="DataHelper.cs" />
@@ -103,8 +106,8 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="AddBookForm.resx">
-      <DependentUpon>AddBookForm.cs</DependentUpon>
+    <EmbeddedResource Include="BookForm.resx">
+      <DependentUpon>BookForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
@@ -125,6 +128,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

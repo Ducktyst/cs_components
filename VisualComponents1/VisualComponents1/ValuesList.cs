@@ -93,6 +93,7 @@ namespace VisualComponents1
 
         public void FillList(object[] items)
         {
+            listBox1.Items.Clear();
             foreach (object item in items)
             {
                 listBox1.Items.Add(fillTemplate(item));

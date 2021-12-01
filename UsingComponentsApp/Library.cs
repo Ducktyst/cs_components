@@ -43,7 +43,7 @@ namespace UsingComponentsApp
         /// бесплатным книгам(в каждой строке текст с информацией: название
         /// книги и ее описание).
         /// </summary>
-        public void CreateExcelFreeBookReport()
+        public void CreateExcelFreeBookReport(string filePath)
         {
 
         }
@@ -334,7 +334,7 @@ namespace UsingComponentsApp
         /// <summary>
         /// Круговая диаграмма в Pdf, сколько бесплатных книг какого жанра
         /// </summary>
-        public void CreatePdfFreeBookByGenreDiagram()
+        public void CreatePdfFreeBookByGenreDiagram(string filePath)
         {
 
         }

@@ -13,7 +13,16 @@ namespace UsingComponentsApp
         public string Description;
         public string Genre;
         public int Price;
-        
+
+        public Book(Book book)
+        {
+            Id = book.Id;
+            Name = book.Name;
+            Description = book.Description;
+            Genre = book.Genre;
+            Price = book.Price;
+        }
+
         public Book(int id, string name, string description, string genre, int price)
         {
             Id = id;

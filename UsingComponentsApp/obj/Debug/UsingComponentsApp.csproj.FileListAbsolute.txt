@@ -33,4 +33,5 @@ C:\Users\kadzo\source\repos\UsingComponents\UsingComponentsApp\bin\Debug\de\Migr
 C:\Users\kadzo\source\repos\UsingComponents\UsingComponentsApp\bin\Debug\de\PdfSharp-gdi.resources.dll
 C:\Users\kadzo\source\repos\UsingComponents\UsingComponentsApp\bin\Debug\de\PdfSharp.Charting-gdi.resources.dll
 C:\Users\kadzo\source\repos\UsingComponents\UsingComponentsApp\obj\Debug\UsingComponentsApp.LibraryGridForm.resources
-C:\Users\kadzo\source\repos\UsingComponents\UsingComponentsApp\obj\Debug\UsingComponentsApp.AddBookForm.resources
+C:\Users\kadzo\source\repos\UsingComponents\UsingComponentsApp\obj\Debug\UsingComponentsApp.BookForm.resources
+C:\Users\kadzo\source\repos\UsingComponents\UsingComponentsApp\bin\Debug\AnyDiff.dll
