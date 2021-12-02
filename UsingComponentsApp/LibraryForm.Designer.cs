@@ -60,21 +60,21 @@ namespace UsingComponentsApp
             // добавитьToolStripMenuItem
             // 
             this.добавитьToolStripMenuItem.Name = "добавитьToolStripMenuItem";
-            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.добавитьToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.добавитьToolStripMenuItem.Text = "Добавить";
             this.добавитьToolStripMenuItem.Click += new System.EventHandler(this.добавитьToolStripMenuItem_Click);
             // 
             // изменитьToolStripMenuItem
             // 
             this.изменитьToolStripMenuItem.Name = "изменитьToolStripMenuItem";
-            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.изменитьToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.изменитьToolStripMenuItem.Text = "Изменить";
             this.изменитьToolStripMenuItem.Click += new System.EventHandler(this.изменитьToolStripMenuItem_Click);
             // 
             // удалитьToolStripMenuItem
             // 
             this.удалитьToolStripMenuItem.Name = "удалитьToolStripMenuItem";
-            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.удалитьToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.удалитьToolStripMenuItem.Text = "Удалить";
             this.удалитьToolStripMenuItem.Click += new System.EventHandler(this.удалитьToolStripMenuItem_Click);
             // 
@@ -85,7 +85,7 @@ namespace UsingComponentsApp
             this.excelToolStripMenuItem,
             this.бесплатныеКнигиПоЖанрамВPDFToolStripMenuItem});
             this.документToolStripMenuItem.Name = "документToolStripMenuItem";
-            this.документToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.документToolStripMenuItem.Size = new System.Drawing.Size(128, 22);
             this.документToolStripMenuItem.Text = "Документ";
             // 
             // wordToolStripMenuItem
@@ -115,7 +115,7 @@ namespace UsingComponentsApp
             this.удалитьToolStripMenuItem,
             this.документToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(181, 114);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(129, 92);
             // 
             // valuesList
             // 
@@ -145,6 +145,7 @@ namespace UsingComponentsApp
             this.Controls.Add(this.openGrid);
             this.Controls.Add(this.valuesList);
             this.Controls.Add(this.controlDataTableTable1);
+            this.KeyPreview = true;
             this.Name = "LibraryForm";
             this.Text = "Library";
             this.KeyDown += new System.Windows.Forms.KeyEventHandler(this.LibraryForm_KeyDown);

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -56,8 +57,9 @@ namespace VisualComponents1
     {
         public char StartVar;
         public char EndVar;
-
         public string Template { get; set; }
+
+        private ArrayList Objects { get; set; }
         public ValuesList()
         {
             InitializeComponent();
@@ -66,7 +68,7 @@ namespace VisualComponents1
 
         private void listBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         /// <summary>
@@ -91,13 +93,32 @@ namespace VisualComponents1
             return listBox1.SelectedIndex;
         }
 
-        public void FillList(object[] items)
+        public void FillList(ArrayList items)
         {
+            Objects = items;
             listBox1.Items.Clear();
             foreach (object item in items)
             {
                 listBox1.Items.Add(fillTemplate(item));
             }
+        }
+
+        public object GetOjbectAt(int idx)
+        {
+            if (idx < 0 || idx > Objects.Count-1)
+                return null;
+
+            return Objects[idx];
+        }
+
+        public void DeleteAt(int idx)
+        {
+            Objects.RemoveAt(idx);
+        }
+
+        public void DeleteObject(object item)
+        {
+            Objects.Remove(item);
         }
 
         private string fillTemplate(object obj)
@@ -107,7 +128,6 @@ namespace VisualComponents1
                 return "";
             }
 
-            string[] variables = new string[] { };
             List<string> varNames = new List<string> { };
 
             string tmpVariableName = "";
@@ -121,7 +141,6 @@ namespace VisualComponents1
                 } else if (chr == EndVar)
                 {
                     status = "findStart";
-                    //variables = (string[])variables.Append(tmpVariableName);
                     varNames.Add(tmpVariableName);
                     tmpVariableName = "";
                 }

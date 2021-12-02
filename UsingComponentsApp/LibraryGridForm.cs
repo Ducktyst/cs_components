@@ -41,8 +41,6 @@ namespace UsingComponentsApp
             controlDataTableTable1.LoadColumns(columns);
             controlDataTableTable1.AddTable(values);
 
-            
-            
         }
 
         private void controlDataTable1_Load(object sender, EventArgs e)

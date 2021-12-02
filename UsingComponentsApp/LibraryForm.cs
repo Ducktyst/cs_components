@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,7 +18,7 @@ namespace UsingComponentsApp
         public LibraryForm()
         {
             InitializeComponent();
-            Book[] books = new Book[] 
+            ArrayList books = new ArrayList 
             { 
                 new Book(1, "Гарри Поттер и философский камень", "Описание", "Фентези", 700),
                 new Book(2, "Возвращение короля", "Джон Рональд Руэл Толкин", "Фентези", 500),
@@ -129,10 +130,9 @@ namespace UsingComponentsApp
                 бесплатныеКнигиПоЖанрамВPDFToolStripMenuItem.PerformClick();
             }
         }
-
         private void openGrid_Click(object sender, EventArgs e)
         {
-            if (libGridForm == null)
+            if (libGridForm == null || libGridForm.IsDisposed)
             {
                 libGridForm = new LibraryGridForm();
             }
@@ -140,6 +140,7 @@ namespace UsingComponentsApp
             {
                 return;
             }
+
             libGridForm.Show(this);
             libGridForm.Activate();
         }
@@ -158,7 +159,8 @@ namespace UsingComponentsApp
             {
                 BookForm bookForm = new BookForm();
 
-                bookForm.FillFields(library.Books[idxList]);
+                Book book = (Book)library.Books[idxList]; // если передавать без переменной, то не изменяется исходная книга
+                bookForm.FillFields(book);
                 bookForm.Activate();
 
                 bookForm.Show(this);
@@ -167,7 +169,23 @@ namespace UsingComponentsApp
 
         private void удалитьToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (MessageBox.Show("Вы собираетесь удалить книгу. Подтвердить?", "Удалить книгу", MessageBoxButtons.YesNo) == DialogResult.No)
+            {
+                return;
+            }
 
+            int itemIdx = valuesList.GetSelectedElementIndex();
+            if (itemIdx != -1)
+            {
+                Book book = (Book)valuesList.GetOjbectAt(itemIdx);
+                if (book == null)
+                {
+                    MessageBox.Show("Не выбран элемент");
+                    return;
+                }
+                valuesList.DeleteObject(book);
+                Redraw();
+            }
         }
     }
 }

@@ -35,6 +35,7 @@ namespace UsingComponentsApp
 {
     public partial class Form1 : Form
     {
+        LibraryForm libForm;
         public Form1()
         {
             InitializeComponent();
@@ -63,9 +64,19 @@ namespace UsingComponentsApp
 
         private void btnOpenLibrary_Click(object sender, EventArgs e)
         {
-            LibraryForm libForm = new LibraryForm();
+            if (libForm is null || libForm.IsDisposed) 
+                libForm = new LibraryForm();
+
+            if (libForm.Visible)
+                return;
+
             libForm.Activate();
-            libForm.Show();
+            libForm.Show(this);
+        }
+
+        private void Form1_KeyDown(object sender, KeyEventArgs e)
+        {
+            //MessageBox.Show("Form1 Keydown");
         }
     }
 }

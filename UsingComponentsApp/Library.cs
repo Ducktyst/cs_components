@@ -2,6 +2,7 @@
 using DocumentFormat.OpenXml.Packaging;
 using DocumentFormat.OpenXml.Wordprocessing;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,30 +13,30 @@ namespace UsingComponentsApp
     
     class Library
     {
-        public Book[] Books;
+        public ArrayList Books;
 
         public Library()
         {
-            Books = new Book[] { };
+            Books = new ArrayList { };
         }
-        public Library(Book[] books)
+        public Library(ArrayList books)
         {
             Books = books;
         }
 
-        public Library(List<Book> books)
+        public ArrayList BooksList()
         {
-            Books = books.ToArray();
-        }
-
-        public List<Book> BooksList()
-        {
-            return Books.ToList();
+            return Books;
          }
 
-        public void AddBook(Book book)
+        public int AddBook(Book book)
         {
-            Books = (Book[])Books.Append(book);
+            return Books.Add(book);
+        }
+
+        public void DeleteBook(Book book)
+        {
+
         }
 
         /// <summary>
